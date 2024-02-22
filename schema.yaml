@@ -1,1 +1,21 @@
-key: val 
+COLUMNS:
+  Transaction ID: object
+  Customer ID: object
+  Date: object
+  Total Items: int64
+  Unique Items: int64
+  Total Sales: float64
+  Discounted Sales: float64
+  Browsing Duration (minutes): float64
+  Number of Clicks: int64
+  Age: int64
+  Gender: object
+  Region: object
+  Marital Status: object
+  Education: object
+  Household Income: float64
+  Loyalty Card: int64
+  Loyalty Points: float64
+
+TARGET_COLUMN:
+  name: Incomplete Transaction
