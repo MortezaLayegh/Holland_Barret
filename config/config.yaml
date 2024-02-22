@@ -16,17 +16,18 @@ data_validation:
 
 
 
-# data_transformation:
-#   root_dir: artifacts/data_transformation
-#   data_path: artifacts/data_ingestion/winequality-red.csv
+data_transformation:
+  root_dir: artifacts/data_transformation
+  data_path: artifacts/data_ingestion/merged_data.csv
+  preprocessor_obj_file_path: 'artifacts/data_transformation/preprocessor.joblib'
 
 
 
-# model_trainer:
-#   root_dir: artifacts/model_trainer
-#   train_data_path: artifacts/data_transformation/train.csv
-#   test_data_path: artifacts/data_transformation/test.csv
-#   model_name: model.joblib
+model_trainer:
+  root_dir: artifacts/model_trainer
+  train_data_path: artifacts/data_transformation/train_df.csv
+  test_data_path: artifacts/data_transformation/test_df.csv
+  model_name: model.joblib
 
 
 

@@ -1,1 +1,2 @@
-key: val 
+XGBClassifier:
+  n_estimators: 100
