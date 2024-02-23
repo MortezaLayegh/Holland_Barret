@@ -21,14 +21,5 @@ xgboost #test
 imbalanced-learn #test
 dill
 
-#-e .
+-e .
 
-
-
-seaborn
-matplotlib
-ipykernel #for notebook
-catboost # test
-xgboost #test 
-imbalanced-learn #test
-dill
