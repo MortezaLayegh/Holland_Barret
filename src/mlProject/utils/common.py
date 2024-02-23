@@ -8,6 +8,8 @@ from ensure import ensure_annotations
 from box import ConfigBox
 from pathlib import Path
 from typing import Any
+from sklearn.metrics import accuracy_score, precision_score, recall_score, f1_score, roc_auc_score
+
 
 
 
@@ -128,3 +130,17 @@ def get_size(path: Path) -> str:
 
 
 
+
+
+@ensure_annotations
+def evaluate_clf(true, predicted):
+    '''
+    This function takes in true values and predicted values
+    Returns: Accuracy, F1-Score, Precision, Recall, Roc-auc Score
+    '''
+    acc = accuracy_score(true, predicted) # Calculate Accuracy
+    f1 = f1_score(true, predicted) # Calculate F1-score
+    precision = precision_score(true, predicted) # Calculate Precision
+    recall = recall_score(true, predicted)  # Calculate Recall
+    roc_auc = roc_auc_score(true, predicted) #Calculate Roc
+    return acc, f1 , precision, recall, roc_auc

@@ -7,12 +7,16 @@ from sklearn.compose import ColumnTransformer
 from sklearn.impute import SimpleImputer
 from sklearn.pipeline import Pipeline
 from sklearn.preprocessing import OneHotEncoder, StandardScaler
+from imblearn.over_sampling import RandomOverSampler
+
 import joblib
 
 from mlProject.entity.config_entity import DataTransformationConfig
 
 
-
+import pandas as pd
+from sklearn.model_selection import train_test_split
+import os
 
 class DataTransformation:
     def __init__(self, config: DataTransformationConfig):
@@ -40,7 +44,7 @@ class DataTransformation:
     def train_test_splitting(self):
         X = self.data.drop('Incomplete Transaction', axis=1)
         y = self.data['Incomplete Transaction']
-        X_train, X_test, y_train, y_test = train_test_split(X, y, stratify=y, test_size=0.2, random_state=42)
+        X_train, X_test, y_train, y_test = train_test_split(X, y, stratify=y, test_size=0.15, random_state=42)
         return X_train, X_test, y_train, y_test
 
 
@@ -83,11 +87,18 @@ class DataTransformation:
 
         return preprocessor
     
+    
     def initiate_data_transformation(self):
         preprocessing_obj = self.get_data_transformer_object()
         X_train, X_test, y_train, y_test = self.train_test_splitting()
         X_train = preprocessing_obj.fit_transform(X_train)
         X_test = preprocessing_obj.transform(X_test)
+
+    
+        #balance the train dataset
+        balancer =RandomOverSampler(random_state=42)
+        X_train, y_train= balancer.fit_resample(X_train, y_train)
+        logger.info("Train dataset balanced")
 
         # Combine input features with target feature
         train_arr = np.c_[X_train, y_train]
@@ -107,5 +118,3 @@ class DataTransformation:
         print(y_train.shape)
 
         joblib.dump(preprocessing_obj, os.path.join(self.config.preprocessor_obj_file_path))
-
-        
