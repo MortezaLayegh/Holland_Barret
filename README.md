@@ -86,7 +86,7 @@ export MLFLOW_TRACKING_PASSWORD=47ea8e5519d9fbb79e294bf09a018544a39aa22d
 ```
 or 
 
-'''cmd
+''' cmd
 
 set MLFLOW_TRACKING_URI=https://dagshub.com/layeghmorteza/Holland_Barret.mlflow
 
@@ -131,7 +131,7 @@ set MLFLOW_TRACKING_PASSWORD=47ea8e5519d9fbb79e294bf09a018544a39aa22d
 
 	
 ## 3. Create ECR repo to store/save docker image
-    - Save the URI: 831367167985.dkr.ecr.eu-north-1.amazonaws.com/mlproj
+    - Save the URI: 856367167985.dkr.ecr.eu-north-1.amazonaws.com/mlproj
 
 	
 ## 4. Create EC2 machine (Ubuntu) 
