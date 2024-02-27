@@ -37,13 +37,9 @@ class PredictionPipeline:
         data = self.preprocessor.transform(data)
         prediction = self.model.predict(data)
 
-        # Specify the file path where you want to save the array
-        
+        # Assuming y_new_pred is a 1-dimensional array containing the predictions
+        predictions_df = pd.DataFrame({'Prediction': prediction})
         create_directories([Path('artifacts/predictions')])
-        file_path = Path("artifacts/predictions/prediction.txt")
-        # Save the array as a text file
-        np.savetxt(file_path, prediction)
-
-
-    
-
+        file_path = Path("artifacts/predictions/prediction.csv")
+        # Save predictions to a CSV file
+        predictions_df.to_csv(file_path, index=False)

@@ -29,6 +29,7 @@ class DataTransformationConfig:
 
 
 
+
 @dataclass(frozen=True)
 class ModelTrainerConfig:
     root_dir: Path
@@ -39,9 +40,9 @@ class ModelTrainerConfig:
     max_depth: int
     learning_rate: int
     random_state: int
-    scale_pos_weight: int
-    min_child_weight: int
+    min_samples_split: int
     subsample: int
+    min_samples_leaf: int
     target_column: str
 
 

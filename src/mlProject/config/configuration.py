@@ -70,7 +70,7 @@ class ConfigurationManager:
     
     def get_model_trainer_config(self) -> ModelTrainerConfig:
         config = self.config.model_trainer
-        params = self.params.XGBClassifier
+        params = self.params.GBMClassifier
         schema =  self.schema.TARGET_COLUMN
 
         create_directories([config.root_dir])
@@ -80,13 +80,15 @@ class ConfigurationManager:
             train_data_path = config.train_data_path,
             test_data_path = config.test_data_path,
             model_name = config.model_name,
+
             n_estimators = params.n_estimators,
             max_depth= params.max_depth,
             learning_rate= params.learning_rate,
             random_state= params.random_state,
-            scale_pos_weight= params.scale_pos_weight,
-            min_child_weight= params.min_child_weight,
             subsample= params.subsample,
+            min_samples_split= params.min_samples_split,
+            min_samples_leaf= params.min_samples_leaf,
+
             target_column = schema.name
             
         )
@@ -96,7 +98,7 @@ class ConfigurationManager:
 
     def get_model_evaluation_config(self) -> ModelEvaluationConfig:
         config = self.config.model_evaluation
-        params = self.params.XGBClassifier
+        params = self.params.GBMClassifier
         schema =  self.schema.TARGET_COLUMN
 
         create_directories([config.root_dir])
@@ -109,7 +111,7 @@ class ConfigurationManager:
             metric_file_name = config.metric_file_name,
             target_column = schema.name,
             mlflow_uri="https://dagshub.com/layeghmorteza/Holland_Barret.mlflow",
-        
+           
         )
 
         return model_evaluation_config

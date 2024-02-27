@@ -4,7 +4,7 @@ import pandas as pd
 import os
 from mlProject import logger
 import joblib
-from xgboost import XGBClassifier
+from sklearn.ensemble import  GradientBoostingClassifier
 
 
 
@@ -23,12 +23,13 @@ class ModelTrainer:
         y_train = train_data.iloc[:, -1]
         y_test = test_data.iloc[:, -1]
 
-
-        xgb = XGBClassifier( n_estimators=self.config.n_estimators, max_depth=self.config.max_depth, 
+        GBM = GradientBoostingClassifier(n_estimators=self.config.n_estimators, max_depth=self.config.max_depth, 
                             learning_rate=self.config.learning_rate, random_state=self.config.random_state,
-                            scale_pos_weight=self.config.scale_pos_weight, min_child_weight=self.config.min_child_weight, 
-                            subsample=self.config.subsample)
-        
-        xgb.fit(X_train, y_train)
+                            subsample=self.config.subsample, min_samples_split=self.config.min_samples_split,
+                            min_samples_leaf=self.config.min_samples_leaf)
 
-        joblib.dump(xgb, os.path.join(self.config.root_dir, self.config.model_name))
+
+
+        GBM.fit(X_train, y_train)
+
+        joblib.dump(GBM, os.path.join(self.config.root_dir, self.config.model_name))
