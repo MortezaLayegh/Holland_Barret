@@ -160,6 +160,6 @@ cython_debug/
 #.idea/
 
 
-artifacts/*
+# artifacts/*
 mlruns/*
-research/notebook_models/*
+# research/notebook_models/*
