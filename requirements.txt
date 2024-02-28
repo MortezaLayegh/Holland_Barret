@@ -13,7 +13,6 @@ types-PyYAML
 Flask
 Flask-Cors
 pandas-profiling 
-unittest
 seaborn
 matplotlib
 ipykernel #for notebook
@@ -21,5 +20,5 @@ catboost # test
 xgboost #test 
 imbalanced-learn #test
 dill
-#-e .
+-e .
 
