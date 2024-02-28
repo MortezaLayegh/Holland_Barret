@@ -1,4 +1,4 @@
-# Holland_Barret project
+# Holland and Barrett project
 # End-to-end-Machine-Learning-Project-with-MLflow
 ## The Notebook for this project is in "research" folder "notebook.ipynb" which contains the EDA and the model development steps in experimental level
 
