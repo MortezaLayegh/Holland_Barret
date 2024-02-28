@@ -51,6 +51,8 @@ pip install -r requirements.txt
 python main.py
 ```
 
+### Output
+check the artifacts folder for the output of different components of the code
 
 ## MLflow
 
