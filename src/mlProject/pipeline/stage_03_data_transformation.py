@@ -3,17 +3,26 @@ from mlProject.components.data_transformation import DataTransformation
 from mlProject import logger
 from pathlib import Path
 
-
-
-
 STAGE_NAME = "Data Transformation stage"
 
 class DataTransformationTrainingPipeline:
+    """
+    A class representing the data transformation training pipeline.
+
+    Attributes:
+        None
+    """
+
     def __init__(self):
+        """
+        Initializes DataTransformationTrainingPipeline class.
+        """
         pass
 
-
     def main(self):
+        """
+        Main method to execute the data transformation training pipeline.
+        """
         try:
             with open(Path("artifacts/data_validation/status.txt"), "r") as f:
                 status = f.read().split(" ")[-1]
@@ -23,17 +32,12 @@ class DataTransformationTrainingPipeline:
                 data_transformation_config = config.get_data_transformation_config()
                 data_transformation = DataTransformation(config=data_transformation_config)
                 data_transformation.initiate_data_transformation()
-                
 
             else:
-                raise Exception("You data schema is not valid")
+                raise Exception("Your data schema is not valid")
 
         except Exception as e:
             print(e)
-
-
-
-
 
 if __name__ == '__main__':
     try:
@@ -44,6 +48,3 @@ if __name__ == '__main__':
     except Exception as e:
         logger.exception(e)
         raise e
-
-
-

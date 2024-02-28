@@ -1,23 +1,31 @@
 from mlProject.config.configuration import ConfigurationManager
-from mlProject.components.data_validation import DataValiadtion
+from mlProject.components.data_validation import DataValidation
 from mlProject import logger
-
 
 STAGE_NAME = "Data Validation stage"
 
 class DataValidationTrainingPipeline:
+    """
+    A class representing the data validation training pipeline.
+
+    Attributes:
+        None
+    """
+
     def __init__(self):
+        """
+        Initializes DataValidationTrainingPipeline class.
+        """
         pass
 
     def main(self):
+        """
+        Main method to execute the data validation training pipeline.
+        """
         config = ConfigurationManager()
         data_validation_config = config.get_data_validation_config()
-        data_validation = DataValiadtion(config=data_validation_config)
+        data_validation = DataValidation(config=data_validation_config)
         data_validation.validate_all_columns()
-
-
-
-
 
 if __name__ == '__main__':
     try:

@@ -6,7 +6,6 @@ from src.mlProject.pipeline.stage_04_model_trainer import ModelTrainerTrainingPi
 from src.mlProject.pipeline.stage_05_model_evaluation import ModelEvaluationTrainingPipeline
 from src.mlProject.pipeline.prediction import PredictionPipeline
 
-
 STAGE_NAME = 'data ingestion training pipeline'
 
 if __name__ == '__main__':
@@ -31,9 +30,7 @@ if __name__ == '__main__':
         logger.exception(e)
         raise e
 
-
 STAGE_NAME = "Data Transformation stage"
-
 
 if __name__ == '__main__':
     try:
@@ -44,12 +41,8 @@ if __name__ == '__main__':
     except Exception as e:
         logger.exception(e)
         raise e
-    
-
-
 
 STAGE_NAME = "Model Trainer stage"
-
 
 if __name__ == '__main__':
     try:
@@ -60,12 +53,8 @@ if __name__ == '__main__':
     except Exception as e:
         logger.exception(e)
         raise e
-    
-
-
 
 STAGE_NAME = "Model evaluation stage"
-
 
 if __name__ == '__main__':
     try:
@@ -76,7 +65,6 @@ if __name__ == '__main__':
     except Exception as e:
         logger.exception(e)
         raise e
-    
 
 STAGE_NAME = "Prediction Stage"
 
@@ -90,4 +78,3 @@ if __name__ == '__main__':
     except Exception as e:
         logger.exception(e)
         raise e
-

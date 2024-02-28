@@ -3,14 +3,30 @@ from mlProject import logger
 import pandas as pd
 from mlProject.entity.config_entity import DataValidationConfig
 
-#here we can also add another layer for data type check
+class DataValidation:
+    """
+    A class to perform data validation tasks.
 
-class DataValiadtion:
+    Attributes:
+        config (DataValidationConfig): Configuration object containing data validation settings.
+    """
+
     def __init__(self, config: DataValidationConfig):
+        """
+        Initializes DataValidation class with provided configuration.
+
+        Args:
+            config (DataValidationConfig): Configuration object containing data validation settings.
+        """
         self.config = config
 
+    def validate_all_columns(self) -> bool:
+        """
+        Validates if all expected columns are present in the dataset.
 
-    def validate_all_columns(self)-> bool:
+        Returns:
+            bool: True if all columns are present, False otherwise.
+        """
         try:
             validation_status = None
 
@@ -19,7 +35,6 @@ class DataValiadtion:
 
             all_schema = self.config.all_schema.keys()
 
-            
             for col in all_cols:
                 if col not in all_schema:
                     validation_status = False
@@ -31,7 +46,7 @@ class DataValiadtion:
                         f.write(f"Validation status: {validation_status}")
 
             return validation_status
-        
-        except Exception as e:
-            raise e
 
+        except Exception as e:
+            logger.error(f"An error occurred during data validation: {str(e)}")
+            raise e

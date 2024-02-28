@@ -13,7 +13,7 @@ types-PyYAML
 Flask
 Flask-Cors
 pandas-profiling 
-
+unittest
 seaborn
 matplotlib
 ipykernel #for notebook

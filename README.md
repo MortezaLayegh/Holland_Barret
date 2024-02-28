@@ -1,10 +1,6 @@
-# Holland_Barret
-
-######################## conda create -p venv python==3.8 -y
-
-
+# Holland_Barret project
 # End-to-end-Machine-Learning-Project-with-MLflow
-
+## The Notebook for this project is in "research" folder "notebook.ipynb" which contains the EDA and the model development steps in experimental level
 
 ## Workflows
 
@@ -71,7 +67,7 @@ open up you local host and port
 MLFLOW_TRACKING_URI=https://dagshub.com/layeghmorteza/Holland_Barret.mlflow \
 MLFLOW_TRACKING_USERNAME=layeghmorteza \
 MLFLOW_TRACKING_PASSWORD=67b443677363044e3f8fb7b3d6b09887d744602f \
-python script.py
+python main.py
 
 Run this to export as env variables:
 
