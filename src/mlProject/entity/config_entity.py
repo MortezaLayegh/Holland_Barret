@@ -1,3 +1,4 @@
+# Entities are nothing but returned type of the configuration manager functions (methods). We are just making sure the configuration manager returns the variables in thr right tyoe. 
 from pathlib import Path
 from dataclasses import dataclass
 
