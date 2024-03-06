@@ -20,5 +20,12 @@ catboost # test
 xgboost #test 
 imbalanced-learn #test
 dill
+
+# api
+uvicorn
+gunicorn
+fastapi
+pydantic
+
 -e .
 

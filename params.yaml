@@ -6,3 +6,48 @@ GBMClassifier:
   min_samples_split: 2
   subsample: 0.9
   min_samples_leaf: 4
+
+
+# n_estimators:
+# Definition: The number of boosting stages or trees to be built.
+# Common Values: Typically range from 50 to 500 or higher.
+# Purpose: Controls the complexity of the ensemble model and affects training time.
+# max_depth:
+
+# Definition: Maximum depth of each decision tree in the boosting process.
+# Common Values: Typically range from 3 to 10.
+# Purpose: Determines the complexity of individual trees and helps prevent overfitting.
+# learning_rate:
+
+# Definition: Scales the contribution of each tree in the ensemble.
+# Common Values: Typically range from 0.01 to 0.1.
+# Purpose: Controls the step size during gradient descent and affects the convergence speed and final model performance.
+# random_state:
+
+# Definition: Sets the random seed for reproducibility.
+# Common Values: Usually set to a fixed integer value, such as 0 or any arbitrary integer.
+# Purpose: Ensures consistent results across different runs of the model.
+# min_samples_split:
+
+# Definition: Minimum number of samples required to split an internal node in a decision tree.
+# Common Values: Typically range from 2 to 10.
+# Purpose: Helps control the growth of the tree and prevents overfitting by ensuring a minimum number of samples in each split.
+# subsample:
+
+# Definition: Fraction of samples to be used for training each tree.
+# Common Values: Typically range from 0.5 to 1.0.
+# Purpose: Introduces randomness into the training process by using only a fraction of the samples, helping to reduce overfitting.
+# min_samples_leaf:
+
+# Definition: Minimum number of samples required to be at a leaf node.
+# Common Values: Similar to min_samples_split, typically ranging from 1 to 10.
+# Purpose: Helps control the growth of the tree and prevents overfitting by ensuring a minimum number of samples in each leaf nod
+
+# GBMClassifier:
+#   n_estimators: 150
+#   max_depth: 3
+#   learning_rate: 0.05
+#   random_state: 10
+#   min_samples_split: 2
+#   subsample: 0.9
+#   min_samples_leaf: 4

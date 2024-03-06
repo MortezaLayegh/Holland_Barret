@@ -72,3 +72,4 @@ class PredictionPipeline:
         file_path = Path("artifacts/predictions/prediction.csv")
         # Save predictions to a CSV file
         predictions_df.to_csv(file_path, index=False)
+        logger.info(f"Predictions saved to {file_path}")
