@@ -49,6 +49,7 @@ pip install -r requirements.txt
 ```bash
 # Finally run the following command
 python main.py
+python app.py
 ```
 
 ### Output
@@ -67,8 +68,9 @@ check the artifacts folder for the output of different components of the code
 
 MLFLOW_TRACKING_URI=https://dagshub.com/layeghmorteza/Holland_Barret.mlflow \
 MLFLOW_TRACKING_USERNAME=layeghmorteza \
-MLFLOW_TRACKING_PASSWORD=67b443677363044e3f8fb7b3d6b09887d744602f \
-python main.py
+MLFLOW_TRACKING_PASSWORD=47ea8e5519d9fbb79e294bf09a018544a39aa22d \
+python script.py
+
 
 Run this to export as env variables:
 
@@ -92,7 +94,6 @@ set MLFLOW_TRACKING_USERNAME=layeghmorteza
 set MLFLOW_TRACKING_PASSWORD=47ea8e5519d9fbb79e294bf09a018544a39aa22d
 
 '''
-
 
 
 # AWS-CICD-Deployment-with-Github-Actions
